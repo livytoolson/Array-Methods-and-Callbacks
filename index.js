@@ -74,7 +74,7 @@ function getWinners(cbfunction){
         if (item["Home Team Goals"] > item["Away Team Goals"]){
             return winners.push(item["Home Team Name"]);
         }
-        else if (item["Away Team Goals"] > ["Home Team Goals"]){
+        else if (item["Away Team Goals"] > item["Home Team Goals"]){
             return winners.push(item["Away Team Name"]);
         }
     });
@@ -93,7 +93,7 @@ function getWinnersByYear(callBack1, callBack2) {
     return (`In ${callBack2}, ${callBack1} won the world cup!`);
 };
 
-console.log(getWinnersByYear(getWinners, getYears));
+getWinnersByYear(getYears, getWinners);
 
 /* Task 6: Write a function called `getAverageGoals` that accepts a parameter `data` and returns the the average number of home team goals and away team goals scored per match (Hint: use .reduce and do this in 2 steps) */
 
