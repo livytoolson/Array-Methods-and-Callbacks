@@ -77,6 +77,9 @@ function getWinners(cbfunction){
         else if (item["Away Team Goals"] > item["Home Team Goals"]){
             return winners.push(item["Away Team Name"]);
         }
+        else if (item["Away Team Goals"] === item["Home Team Goals"]){
+            return winners.push("It was a tie");
+        }
     });
     return winners;
 };
@@ -91,7 +94,7 @@ Parameters:
 
 function getWinnersByYear(callBack1, callBack2) {
     const winnerArray = [];
-    for(let i = 0; i < fifaData.length; i++){
+    for(let i = 0; i < callBack2.length; i++){
     winnerArray.push(`In ${callBack1[i]}, ${callBack2[i]} won the world cup!`);
     }
     console.log(winnerArray);
